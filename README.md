@@ -1,12 +1,36 @@
 # srs-unity
 
+[![](https://badgen.net/discord/members/yZ4BnPmHAd)](https://discord.gg/yZ4BnPmHAd)
+
 Video Streaming and WebRTC Samples for Unity, please read this [link]() for detail.
+
+Unity supports WebRTC, see [com.unity.webrtc](https://docs.unity3d.com/Packages/com.unity.webrtc@2.4/manual/index.html) or [github](https://github.com/Unity-Technologies/com.unity.webrtc). However, the demos only work in P2P mode, not with remote SFU or SRS.
+
+To work with SFU or WebRTC server, the best practice is to use [WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/) for Unity to publish to SFU, such as SRS. Actually, you're also able to play stream by WHIP.
+
+The most common use scenaio for publishing stream, is to covert video game as live streaming. However you can use OBS to capture the window and audio, but it enable you to capture from Unity inside, cool! It works like this:
+
+```
+(Scenario 1)
+Unity Game ---WebRTC----> SRS --+-----RTMP--> YouTube/FFmpeg
+                                +---WebRTC--> H5/Unity
+```
+
+And the playing stream can be used for streaming consuming, it's a new feature enabled by Unity WebRTC. It works like this:
+
+```
+                                        (Scenario 2)
+OBS/FFmpeg ----RTMP----+--> SRS --WebRTC--> Unity Game
+H5/Unity -----WebRTC-----+
+```
+
+It also allows multiple Unity Games to communicate by WebRTC. And there should be a set of new use scenarios for Unity+WebRTC+SRS, that you can finger out and please let us know
 
 <a name="usage"></a>
 
 ## Usage: Publisher
 
-To publish your WebCamera and Microphone using WebRTC.
+To publish your WebCamera and Microphone using WebRTC. If you're stuck, please get help from [Discord](https://discord.gg/yZ4BnPmHAd).
 
 **Step 1:** Download and setup [Unity Hub](https://unity.com/download).
 
@@ -34,7 +58,7 @@ To publish your WebCamera and Microphone using WebRTC.
 1. Click `Asserts > Import Package > Custom Package`, select the file `Video.Streaming.and.WebRTC.Samples.unitypackage`, then click `Import`.
 1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples`, where you got all samples there.
 
-**Step 5:** Start [srs](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
+**Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
 
 ```bash
 CANDIDATE="192.168.1.10"
@@ -43,7 +67,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     ossrs/srs:5 ./objs/srs -c conf/docker.conf
 ```
 
-> Note: Make sure your SRS is `v4.0.264+`` or `v5.0.62+`.
+> Note: Make sure your SRS is `v4.0.264+` or `v5.0.62+`. Please read this [guide](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) to setup SRS.
 
 > Note: Please remember to replace the `CANDIDATE` to your server IP, please read [link](https://ossrs.io/lts/en-us/docs/v5/doc/webrtc#config-candidate) for details.
 
@@ -72,7 +96,7 @@ https://user-images.githubusercontent.com/2777660/189331198-e045aeec-ad75-447b-8
 
 ## Usage: Streamer
 
-To publish your game camera and voice using WebRTC.
+To publish your game camera and voice using WebRTC. If you're stuck, please get help from [Discord](https://discord.gg/yZ4BnPmHAd).
 
 **Step 1:** Download and setup [Unity Hub](https://unity.com/download).
 
@@ -100,7 +124,7 @@ To publish your game camera and voice using WebRTC.
 1. Click `Asserts > Import Package > Custom Package`, select the file `Video.Streaming.and.WebRTC.Samples.unitypackage`, then click `Import`.
 1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples`, where you got all samples there.
 
-**Step 5:** Start [srs](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
+**Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
 
 ```bash
 CANDIDATE="192.168.1.10"
@@ -109,7 +133,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     ossrs/srs:5 ./objs/srs -c conf/docker.conf
 ```
 
-> Note: Make sure your SRS is `v4.0.264+`` or `v5.0.62+`.
+> Note: Make sure your SRS is `v4.0.264+` or `v5.0.62+`. Please read this [guide](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) to setup SRS.
 
 > Note: Please remember to replace the `CANDIDATE` to your server IP, please read [link](https://ossrs.io/lts/en-us/docs/v5/doc/webrtc#config-candidate) for details.
 
@@ -142,7 +166,9 @@ https://user-images.githubusercontent.com/2777660/189353556-047025b2-2019-4c5a-a
 
 ## Usage: Streamer
 
-To play stream using WebRTC, where the stream might be published by another WebRTC client, or live stream like OBS or FFmpeg.
+To play stream using WebRTC. If you're stuck, please get help from [Discord](https://discord.gg/yZ4BnPmHAd).
+
+> Note: The stream might be published by another WebRTC client, or live stream like OBS or FFmpeg
 
 **Step 1:** Download and setup [Unity Hub](https://unity.com/download).
 
@@ -170,7 +196,7 @@ To play stream using WebRTC, where the stream might be published by another WebR
 1. Click `Asserts > Import Package > Custom Package`, select the file `Video.Streaming.and.WebRTC.Samples.unitypackage`, then click `Import`.
 1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples`, where you got all samples there.
 
-**Step 5:** Start [srs](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
+**Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
 
 ```bash
 CANDIDATE="192.168.1.10"
@@ -179,7 +205,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     ossrs/srs:5 ./objs/srs -c conf/docker.conf
 ```
 
-> Note: Make sure your SRS is `v4.0.264+`` or `v5.0.62+`.
+> Note: Make sure your SRS is `v4.0.264+` or `v5.0.62+`. Please read this [guide](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) to setup SRS.
 
 > Note: Please remember to replace the `CANDIDATE` to your server IP, please read [link](https://ossrs.io/lts/en-us/docs/v5/doc/webrtc#config-candidate) for details.
 
