@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "com.unity.asset-store-tools": {
-      "version": "11.0.2",
+      "version": "file:com.unity.asset-store-tools",
       "depth": 0,
-      "source": "registry",
+      "source": "embedded",
       "dependencies": {}
     },
     "com.unity.collab-proxy": {
