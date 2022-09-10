@@ -54,8 +54,8 @@ To publish your WebCamera and Microphone using WebRTC. If you're stuck, please g
 
 **Step 4:** Install [srs-unity](https://github.com/ossrs/srs-unity) package.
 
-1. Download package [Video.Streaming.and.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/Video.Streaming.and.WebRTC.Samples.unitypackage).
-1. Click `Asserts > Import Package > Custom Package`, select the file `Video.Streaming.and.WebRTC.Samples.unitypackage`, then click `Import`.
+1. Download package [SRS.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/SRS.WebRTC.Samples.unitypackage).
+1. Click `Asserts > Import Package > Custom Package`, select the file `SRS.WebRTC.Samples.unitypackage`, then click `Import`.
 1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples`, where you got all samples there.
 
 **Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
@@ -120,8 +120,8 @@ To publish your game camera and voice using WebRTC. If you're stuck, please get 
 
 **Step 4:** Install [srs-unity](https://github.com/ossrs/srs-unity) package.
 
-1. Download package [Video.Streaming.and.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/Video.Streaming.and.WebRTC.Samples.unitypackage).
-1. Click `Asserts > Import Package > Custom Package`, select the file `Video.Streaming.and.WebRTC.Samples.unitypackage`, then click `Import`.
+1. Download package [SRS.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/SRS.WebRTC.Samples.unitypackage).
+1. Click `Asserts > Import Package > Custom Package`, select the file `SRS.WebRTC.Samples.unitypackage`, then click `Import`.
 1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples`, where you got all samples there.
 
 **Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
@@ -192,8 +192,8 @@ To play stream using WebRTC. If you're stuck, please get help from [Discord](htt
 
 **Step 4:** Install [srs-unity](https://github.com/ossrs/srs-unity) package.
 
-1. Download package [Video.Streaming.and.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/Video.Streaming.and.WebRTC.Samples.unitypackage).
-1. Click `Asserts > Import Package > Custom Package`, select the file `Video.Streaming.and.WebRTC.Samples.unitypackage`, then click `Import`.
+1. Download package [SRS.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/SRS.WebRTC.Samples.unitypackage).
+1. Click `Asserts > Import Package > Custom Package`, select the file `SRS.WebRTC.Samples.unitypackage`, then click `Import`.
 1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples`, where you got all samples there.
 
 **Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:

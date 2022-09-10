@@ -25,7 +25,7 @@ jobs:
           echo "SRS_TAG=$SRS_TAG" >> $GITHUB_ENV
           SRS_MAJOR=$(echo $SRS_TAG| cut -c 2)
           echo "SRS_MAJOR=$SRS_MAJOR" >> $GITHUB_ENV
-          SRS_FILE="objs/Video.Streaming.and.WebRTC.Samples.unitypackage"
+          SRS_FILE="objs/SRS.WebRTC.Samples.unitypackage"
           echo "SRS_FILE=$SRS_FILE" >> $GITHUB_ENV
 
       # Generate metadata list for Unity package.
