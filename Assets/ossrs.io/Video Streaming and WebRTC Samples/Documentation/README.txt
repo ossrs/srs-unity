@@ -10,3 +10,5 @@ Some samples for video streaming and WebRTC for Unity.
 
 You're able to integraty these demos to your application, to work with SRS, a WebRTC SFU server.
 
+Please remove more details at https://github.com/ossrs/srs-unity
+
