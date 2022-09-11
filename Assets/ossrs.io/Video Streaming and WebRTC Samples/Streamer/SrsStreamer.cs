@@ -1,5 +1,9 @@
+//
+// Copyright (c) 2022 Winlin
+//
+// SPDX-License-Identifier: MIT
+//
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.WebRTC;
 
@@ -20,6 +24,11 @@ public class SrsStreamer : MonoBehaviour
     private AudioStreamTrack audioStreamTrack;
     private RTCPeerConnection pc;
 
+    // To make the work flow better to understand, not required. You can
+    // directly use the `OnAudioFilterRead` function to feed audio stream track.
+    private delegate void DelegateOnAudioFilterRead(float[] data, int channels);
+    private DelegateOnAudioFilterRead handleOnAudioFilterRead;
+
     private void Awake()
     {
         WebRTC.Initialize();
@@ -30,6 +39,8 @@ public class SrsStreamer : MonoBehaviour
     {
         videoStream?.Dispose();
         videoStream = null;
+
+        handleOnAudioFilterRead = null;
 
         audioStreamTrack?.Dispose();
         audioStreamTrack = null;
@@ -103,6 +114,18 @@ public class SrsStreamer : MonoBehaviour
             audioStreamTrack = new AudioStreamTrack();
             pc.AddTrack(audioStreamTrack);
             Debug.Log($"WebRTC: Add audio track, id={audioStreamTrack.Id}");
+
+            // When got audio data from listener, the gameObject this script
+            // attached to, generally the MainCamera object, we feed audio data to
+            // audio stream track.
+            handleOnAudioFilterRead = (float[] data, int channels) =>
+            {
+                if (audioStreamTrack != null)
+                {
+                    const int sampleRate = 48000;
+                    audioStreamTrack.SetData(data, channels, sampleRate);
+                }
+            };
 
             yield return StartCoroutine(PeerNegotiationNeeded());
         }
@@ -181,14 +204,10 @@ public class SrsStreamer : MonoBehaviour
 
     private void OnAudioFilterRead(float[] data, int channels)
     {
-        // Ignore if disposed.
-        if (audioStreamTrack == null) return;
-
-        // When got audio data from listener, the gameObject this script
-        // attached to, generally the MainCamera object, we feed audio data to
-        // audio stream track.
-        const int sampleRate = 48000;
-        audioStreamTrack.SetData(data, channels, sampleRate);
+        if (handleOnAudioFilterRead != null)
+        {
+            handleOnAudioFilterRead(data, channels);
+        }
     }
 
     void Update()

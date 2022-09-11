@@ -1,3 +1,8 @@
+//
+// Copyright (c) 2022 Winlin
+//
+// SPDX-License-Identifier: MIT
+//
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

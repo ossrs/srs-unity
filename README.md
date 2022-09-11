@@ -2,7 +2,7 @@
 
 [![](https://badgen.net/discord/members/yZ4BnPmHAd)](https://discord.gg/yZ4BnPmHAd)
 
-Video Streaming and WebRTC Samples for Unity, please read this [link]() for detail.
+SRS WebRTC Samples for Unity, please read this [link]() for detail.
 
 Unity supports WebRTC, see [com.unity.webrtc](https://docs.unity3d.com/Packages/com.unity.webrtc@2.4/manual/index.html) or [github](https://github.com/Unity-Technologies/com.unity.webrtc). However, the demos only work in P2P mode, not with remote SFU or SRS.
 
@@ -56,7 +56,7 @@ To publish your WebCamera and Microphone using WebRTC. If you're stuck, please g
 
 1. Download package [SRS.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/SRS.WebRTC.Samples.unitypackage).
 1. Click `Asserts > Import Package > Custom Package`, select the file `SRS.WebRTC.Samples.unitypackage`, then click `Import`.
-1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples`, where you got all samples there.
+1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples`, where you got all samples there.
 
 **Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
 
@@ -75,7 +75,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 
 **Step 6:** Work with `Publisher` sample.
 
-1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples > Publisher`, then open the `Scene`.
+1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples > Publisher`, then open the `Scene`.
 1. Click `Edit > Play` to play Unity scene, which publish WebRTC stream to SRS.
 1. Play the WebRTC stream by [H5](http://localhost:8080/players/rtc_player.html?autostart=true).
 
@@ -122,7 +122,7 @@ To publish your game camera and voice using WebRTC. If you're stuck, please get 
 
 1. Download package [SRS.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/SRS.WebRTC.Samples.unitypackage).
 1. Click `Asserts > Import Package > Custom Package`, select the file `SRS.WebRTC.Samples.unitypackage`, then click `Import`.
-1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples`, where you got all samples there.
+1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples`, where you got all samples there.
 
 **Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
 
@@ -141,11 +141,11 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 
 **Step 6:** Work with `Streamer` sample.
 
-1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples > Streamer`, then open the `Scene`.
+1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples > Streamer`, then open the `Scene`.
 1. Click `Edit > Play` to play Unity scene, which publish WebRTC stream to SRS.
 1. Play the WebRTC stream by [H5](http://localhost:8080/players/rtc_player.html?autostart=true).
 
-> Note: Note that the `Streamer` scene grab an extra camera in game and voice of `Main Camera`, however there is no voice so you can add some audio clip to play.
+> Note: Note that the `Streamer` scene grab an extra camera in game and voice of `Main Camera`, and we add an example audio clip from [hls](https://developer.apple.com/streaming/examples/basic-stream-osx-ios4-3.html).
 
 The stream flows like this:
 
@@ -194,7 +194,7 @@ To play stream using WebRTC. If you're stuck, please get help from [Discord](htt
 
 1. Download package [SRS.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/SRS.WebRTC.Samples.unitypackage).
 1. Click `Asserts > Import Package > Custom Package`, select the file `SRS.WebRTC.Samples.unitypackage`, then click `Import`.
-1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples`, where you got all samples there.
+1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples`, where you got all samples there.
 
 **Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
 
@@ -214,7 +214,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 **Step 6:** Work with `Player` sample.
 
 1. Publish the WebRTC stream by [H5](http://localhost:8080/players/rtc_publisher.html?autostart=true).
-1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples > Player`, then open the `Scene`.
+1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples > Player`, then open the `Scene`.
 1. Click `Edit > Play` to play Unity scene, which publish WebRTC stream to SRS.
 
 > Note: You're also able to publish a live stream and play it in Unity using WebRTC, see [WebRTC for Live Streaming](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started#webrtc-for-live-streaming).
