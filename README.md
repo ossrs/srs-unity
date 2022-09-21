@@ -28,22 +28,22 @@ It also allows multiple Unity Games to communicate by WebRTC. And there should b
 
 <a name="usage"></a>
 
-## Usage: Publisher
+## Setting up project
 
-To publish your WebCamera and Microphone using WebRTC. If you're stuck, please get help from [Discord](https://discord.gg/yZ4BnPmHAd).
+First, please setup you Unity Project. If you're stuck, please get help from [Discord](https://discord.gg/yZ4BnPmHAd).
 
 **Step 1:** Download and setup [Unity Hub](https://unity.com/download).
 
 1. Open `Unity Hub`.
 1. Click `Installs > Install Editor`, please select one release to install.
-1. Check modules for `Unity Editor`, make sure `Visual Studio` installed.
+1. Check modules for `Unity Editor`, (Windows: make sure `Visual Studio` installed).
 
-**Step 2:** Create a empty`3D Core` project.
+**Step 2:** Create a Unity project.
 
 1. Open `Unity Hub`.
 1. Click `Projects > New Project`.
-1. Select `3D Core` template.
-1. Set the `Project Name` to `My SRS Demos`.
+1. Select `3D Core` or `3D URP` template.
+1. Set the `Project Name` to `My Application name`.
 1. Click `Create project`, and an `Unity Editor` will be opened.
 
 **Step 3:** Install dependency package [com.unity.webrtc](https://docs.unity3d.com/Packages/com.unity.webrtc@2.4/manual/install.html).
@@ -51,6 +51,18 @@ To publish your WebCamera and Microphone using WebRTC. If you're stuck, please g
 1. Click `Window > Package Manager`.
 1. Click `+ > Add package from git URL`.
 1. Input `com.unity.webrtc` then click `Add`.
+
+**Step 3.1** Case of Unity 2020.3 or 2021.3:
+
+1. Click `Window > Package Manager`.
+1. Click `+ > Advanced button` and enable `Show preview packages`
+1. Search `webrtc` and install the package.
+
+**Step 3.2** Case of Unity 2019.4:
+
+1. Click `Window > Package Manager`.
+2. Click `+ > Add package from git URL`.
+3. Input `com.unity.webrtc` then click `Add`.
 
 **Step 4:** Install [srs-unity](https://github.com/ossrs/srs-unity) package.
 
@@ -73,10 +85,17 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 
 > Note: For online service, you might need authentication and other features, please read [How to Setup a Video Streaming Service by 1-Click](https://ossrs.io/lts/en-us/blog/SRS-Cloud-Tutorial) or [How to Setup a Video Streaming Service with aaPanel](https://ossrs.io/lts/en-us/blog/BT-aaPanel) to build a service by SRS.
 
-**Step 6:** Work with `Publisher` sample.
+Bellow is detail guide for different use scenarios.
+
+## Usage: Publisher
+
+To publish your WebCamera and Microphone using WebRTC. If you're stuck, please get help from [Discord](https://discord.gg/yZ4BnPmHAd).
+
+Please follow [Setting up project](#setting-up-project), then work with `Publisher` sample.
 
 1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples > Publisher`, then open the `Scene`.
 1. Click `Edit > Play` to play Unity scene, which publish WebRTC stream to SRS.
+1. Open Main camera object in the editor and under the SRS publisher script, change the ip address and stream key to your e.g. `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream`
 1. Play the WebRTC stream by [H5](http://localhost:8080/players/rtc_player.html?autostart=true).
 
 > Note: Note that the `Publisher` scene require the WebCamera and Microphone permission, you can try other sample if no device.
@@ -98,51 +117,11 @@ https://user-images.githubusercontent.com/2777660/189331198-e045aeec-ad75-447b-8
 
 To publish your game camera and voice using WebRTC. If you're stuck, please get help from [Discord](https://discord.gg/yZ4BnPmHAd).
 
-**Step 1:** Download and setup [Unity Hub](https://unity.com/download).
-
-1. Open `Unity Hub`.
-1. Click `Installs > Install Editor`, please select one release to install.
-1. Check modules for `Unity Editor`, make sure `Visual Studio` installed.
-
-**Step 2:** Create a empty`3D Core` project.
-
-1. Open `Unity Hub`.
-1. Click `Projects > New Project`.
-1. Select `3D Core` template.
-1. Set the `Project Name` to `My SRS Demos`.
-1. Click `Create project`, and an `Unity Editor` will be opened.
-
-**Step 3:** Install dependency package [com.unity.webrtc](https://docs.unity3d.com/Packages/com.unity.webrtc@2.4/manual/install.html).
-
-1. Click `Window > Package Manager`.
-1. Click `+ > Add package from git URL`.
-1. Input `com.unity.webrtc` then click `Add`.
-
-**Step 4:** Install [srs-unity](https://github.com/ossrs/srs-unity) package.
-
-1. Download package [SRS.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/SRS.WebRTC.Samples.unitypackage).
-1. Click `Asserts > Import Package > Custom Package`, select the file `SRS.WebRTC.Samples.unitypackage`, then click `Import`.
-1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples`, where you got all samples there.
-
-**Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
-
-```bash
-CANDIDATE="192.168.1.10"
-docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
-    --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    ossrs/srs:5 ./objs/srs -c conf/docker.conf
-```
-
-> Note: Make sure your SRS is `v4.0.264+` or `v5.0.62+`. Please read this [guide](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) to setup SRS.
-
-> Note: Please remember to replace the `CANDIDATE` to your server IP, please read [link](https://ossrs.io/lts/en-us/docs/v5/doc/webrtc#config-candidate) for details.
-
-> Note: For online service, you might need authentication and other features, please read [How to Setup a Video Streaming Service by 1-Click](https://ossrs.io/lts/en-us/blog/SRS-Cloud-Tutorial) or [How to Setup a Video Streaming Service with aaPanel](https://ossrs.io/lts/en-us/blog/BT-aaPanel) to build a service by SRS.
-
-**Step 6:** Work with `Streamer` sample.
+Please follow [Setting up project](#setting-up-project), then work with `Streamer` sample.
 
 1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples > Streamer`, then open the `Scene`.
 1. Click `Edit > Play` to play Unity scene, which publish WebRTC stream to SRS.
+1. Open Main camera object in the editor and under the SRS streamer script, change the ip address and stream key to your e.g. `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream`
 1. Play the WebRTC stream by [H5](http://localhost:8080/players/rtc_player.html?autostart=true).
 
 > Note: Note that the `Streamer` scene grab an extra camera in game and voice of `Main Camera`, and we add an example audio clip from [hls](https://developer.apple.com/streaming/examples/basic-stream-osx-ios4-3.html).
@@ -164,57 +143,17 @@ https://user-images.githubusercontent.com/2777660/189353556-047025b2-2019-4c5a-a
 
 > Note: Please note that we also capture the audio of game, so when we mute the H5 player there is no audio.
 
-## Usage: Streamer
+## Usage: Player
 
 To play stream using WebRTC. If you're stuck, please get help from [Discord](https://discord.gg/yZ4BnPmHAd).
 
 > Note: The stream might be published by another WebRTC client, or live stream like OBS or FFmpeg
 
-**Step 1:** Download and setup [Unity Hub](https://unity.com/download).
-
-1. Open `Unity Hub`.
-1. Click `Installs > Install Editor`, please select one release to install.
-1. Check modules for `Unity Editor`, make sure `Visual Studio` installed.
-
-**Step 2:** Create a empty`3D Core` project.
-
-1. Open `Unity Hub`.
-1. Click `Projects > New Project`.
-1. Select `3D Core` template.
-1. Set the `Project Name` to `My SRS Demos`.
-1. Click `Create project`, and an `Unity Editor` will be opened.
-
-**Step 3:** Install dependency package [com.unity.webrtc](https://docs.unity3d.com/Packages/com.unity.webrtc@2.4/manual/install.html).
-
-1. Click `Window > Package Manager`.
-1. Click `+ > Add package from git URL`.
-1. Input `com.unity.webrtc` then click `Add`.
-
-**Step 4:** Install [srs-unity](https://github.com/ossrs/srs-unity) package.
-
-1. Download package [SRS.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/SRS.WebRTC.Samples.unitypackage).
-1. Click `Asserts > Import Package > Custom Package`, select the file `SRS.WebRTC.Samples.unitypackage`, then click `Import`.
-1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples`, where you got all samples there.
-
-**Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
-
-```bash
-CANDIDATE="192.168.1.10"
-docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
-    --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    ossrs/srs:5 ./objs/srs -c conf/docker.conf
-```
-
-> Note: Make sure your SRS is `v4.0.264+` or `v5.0.62+`. Please read this [guide](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) to setup SRS.
-
-> Note: Please remember to replace the `CANDIDATE` to your server IP, please read [link](https://ossrs.io/lts/en-us/docs/v5/doc/webrtc#config-candidate) for details.
-
-> Note: For online service, you might need authentication and other features, please read [How to Setup a Video Streaming Service by 1-Click](https://ossrs.io/lts/en-us/blog/SRS-Cloud-Tutorial) or [How to Setup a Video Streaming Service with aaPanel](https://ossrs.io/lts/en-us/blog/BT-aaPanel) to build a service by SRS.
-
-**Step 6:** Work with `Player` sample.
+Please follow [Setting up project](#setting-up-project), then work with `Player` sample.
 
 1. Publish the WebRTC stream by [H5](http://localhost:8080/players/rtc_publisher.html?autostart=true).
 1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples > Player`, then open the `Scene`.
+1. Open Main camera object in the editor and under the SRS player script, change the ip address and stream key to your e.g. `http://localhost:1985/rtc/v1/whip-play/?app=live&stream=livestream`
 1. Click `Edit > Play` to play Unity scene, which publish WebRTC stream to SRS.
 
 > Note: You're also able to publish a live stream and play it in Unity using WebRTC, see [WebRTC for Live Streaming](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started#webrtc-for-live-streaming).
