@@ -50,6 +50,8 @@ public class SrsPublisher : MonoBehaviour
 
     void Start()
     {
+        Debug.Log($"WebRTC: Start to publish {url}");
+
         // Start WebRTC update.
         StartCoroutine(WebRTC.Update());
 

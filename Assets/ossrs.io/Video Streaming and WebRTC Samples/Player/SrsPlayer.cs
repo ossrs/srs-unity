@@ -43,6 +43,8 @@ public class SrsPlayer : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log($"WebRTC: Start to play {url}");
+
         // Start WebRTC update.
         StartCoroutine(WebRTC.Update());
 

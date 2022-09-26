@@ -58,6 +58,8 @@ public class SrsStreamer : MonoBehaviour
 
     void Start()
     {
+        Debug.Log($"WebRTC: Start to stream {url}");
+
         // Start WebRTC update.
         StartCoroutine(WebRTC.Update());
 
