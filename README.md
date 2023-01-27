@@ -26,6 +26,13 @@ H5/Unity -----WebRTC-----+
 
 It also allows multiple Unity Games to communicate by WebRTC. And there should be a set of new use scenarios for Unity+WebRTC+SRS, that you can finger out and please let us know
 
+## Environments
+
+We have tested on:
+
+* Unity editor `2021.3.16f1c1 LTS`, other latest LTS versions should work well also.
+* WebRTC 2.4+, because CaptureStream API changed, see [#2](https://github.com/ossrs/srs-unity/issues/2) for detail.
+
 <a name="usage"></a>
 
 ## Setting up project
@@ -43,7 +50,7 @@ First, please setup you Unity Project. If you're stuck, please get help from [Di
 1. Open `Unity Hub`.
 1. Click `Projects > New Project`.
 1. Select `3D Core` or `3D URP` template.
-1. Set the `Project Name` to `My Application name`.
+1. Set the `Project Name` to `My project`.
 1. Click `Create project`, and an `Unity Editor` will be opened.
 
 **Step 3:** Install dependency package [com.unity.webrtc](https://docs.unity3d.com/Packages/com.unity.webrtc@2.4/manual/install.html).
@@ -64,7 +71,7 @@ First, please setup you Unity Project. If you're stuck, please get help from [Di
 2. Click `+ > Add package from git URL`.
 3. Input `com.unity.webrtc` then click `Add`.
 
-**Step 4:** Install [srs-unity](https://github.com/ossrs/srs-unity) package.
+**Step 4:** Install [srs-unity](https://github.com/ossrs/srs-unity/releases) package.
 
 1. Download package [SRS.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/SRS.WebRTC.Samples.unitypackage).
 1. Click `Asserts > Import Package > Custom Package`, select the file `SRS.WebRTC.Samples.unitypackage`, then click `Import`.
