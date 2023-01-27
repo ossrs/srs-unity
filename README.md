@@ -2,7 +2,7 @@
 
 [![](https://badgen.net/discord/members/yZ4BnPmHAd)](https://discord.gg/yZ4BnPmHAd)
 
-SRS WebRTC Samples for Unity, please read this [link]() for detail.
+SRS WebRTC Samples for Unity.
 
 Unity supports WebRTC, see [com.unity.webrtc](https://docs.unity3d.com/Packages/com.unity.webrtc@2.4/manual/index.html) or [github](https://github.com/Unity-Technologies/com.unity.webrtc). However, the demos only work in P2P mode, not with remote SFU or SRS.
 
