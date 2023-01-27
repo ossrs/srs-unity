@@ -95,7 +95,7 @@ public class SrsStreamer : MonoBehaviour
         // Grab the game camera.
         IEnumerator GrabCamera()
         {
-            videoStream = sourceCamera.CaptureStream(480, 320, 500 * 1000);
+            videoStream = sourceCamera.CaptureStream(480, 320);
             Debug.Log($"WebRTC: Grab camera stream={videoStream.Id}, size={sourceCamera.targetTexture.width}x{sourceCamera.targetTexture.height}");
 
             foreach (var track in videoStream.GetTracks())
