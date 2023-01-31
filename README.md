@@ -33,6 +33,16 @@ We have tested on:
 * Unity editor `2021.3.16f1c1 LTS`, other latest LTS versions should work well also.
 * WebRTC 2.4+, because CaptureStream API changed, see [#2](https://github.com/ossrs/srs-unity/issues/2) for detail.
 
+The supported versions:
+
+- [x] [3.0.0-pre.4](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.4)
+- [x] [3.0.0-pre.3](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.3)
+- [x] [3.0.0-pre.2](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.2)
+- [x] [3.0.0-pre.1](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.1)
+- [x] [2.4.0-exp.11](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/2.4.0-exp.11)
+
+The latest version should work well also, please file an issue if not.
+
 <a name="usage"></a>
 
 ## Setting up project
