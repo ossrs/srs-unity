@@ -11,9 +11,9 @@ using Unity.WebRTC;
 public class SrsPlayer : MonoBehaviour
 {
     // The WHIP stream url, to pull WebRTC stream from SRS or other media
-    // servers. Please note that SRS uses `/rtc/v1/whip-play/` as a WebRTC
+    // servers. Please note that SRS uses `/rtc/v1/whep/` as a WebRTC
     // player, or parameter `action=play` in query string.
-    public string url = "http://localhost:1985/rtc/v1/whip-play/?app=live&stream=livestream";
+    public string url = "http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream";
     // The RAW image to render the received WebRTC video stream. Generally, it
     // should be in a Canvas object. Please note that we will scale the image
     // size according to the video stream resolution.

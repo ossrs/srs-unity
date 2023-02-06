@@ -6,7 +6,7 @@ SRS WebRTC Samples for Unity.
 
 Unity supports WebRTC, see [com.unity.webrtc](https://docs.unity3d.com/Packages/com.unity.webrtc@2.4/manual/index.html) or [github](https://github.com/Unity-Technologies/com.unity.webrtc). However, the demos only work in P2P mode, not with remote SFU or SRS.
 
-To work with SFU or WebRTC server, the best practice is to use [WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/) for Unity to publish to SFU, such as SRS. Actually, you're also able to play stream by WHIP.
+To work with SFU or WebRTC server, the best practice is to use [WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/) for Unity to publish to SFU, such as SRS. Actually, you're also able to play stream by [WHEP](https://datatracker.ietf.org/doc/draft-murillo-whep/).
 
 The most common use scenaio for publishing stream, is to covert video game as live streaming. However you can use OBS to capture the window and audio, but it enable you to capture from Unity inside, cool! It works like this:
 
@@ -160,7 +160,7 @@ Please follow [Setting up project](#setting-up-project), then work with `Player`
 
 1. Publish the WebRTC stream by [H5](http://localhost:8080/players/rtc_publisher.html?autostart=true).
 1. From `Project` panel, open `Asserts > ossrs.io > SRS WebRTC Samples > Player`, then open the `Scene`.
-1. Open Main camera object in the editor and under the SRS player script, change the ip address and stream key to your e.g. `http://localhost:1985/rtc/v1/whip-play/?app=live&stream=livestream`
+1. Open Main camera object in the editor and under the SRS player script, change the ip address and stream key to your e.g. `http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream`
 1. Click `Edit > Play` to play Unity scene, which publish WebRTC stream to SRS.
 
 > Note: You're also able to publish a live stream and play it in Unity using WebRTC, see [WebRTC for Live Streaming](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started#webrtc-for-live-streaming).
