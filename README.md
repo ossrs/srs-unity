@@ -35,7 +35,9 @@ We have tested on:
 
 The supported versions:
 
-- [x] [3.0.0-pre.4](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.4)
+- [ ] [3.0.0-pre.6](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.6), Not supported, see [#963](https://github.com/Unity-Technologies/com.unity.webrtc/issues/963)
+- [x] [3.0.0-pre.5](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.5)
+- [x] [3.0.0-pre.4](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.4), See [#5](https://github.com/ossrs/srs-unity/issues/5) and [#882](https://github.com/Unity-Technologies/com.unity.webrtc/issues/882).
 - [x] [3.0.0-pre.3](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.3)
 - [x] [3.0.0-pre.2](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.2)
 - [x] [3.0.0-pre.1](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.1)
