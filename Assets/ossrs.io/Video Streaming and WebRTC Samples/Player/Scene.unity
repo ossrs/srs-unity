@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00121d141058d4dcf8ab52e9a3819bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: http://localhost:1985/rtc/v1/whip-play/?app=live&stream=livestream
+  url: http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream
   receiveImage: {fileID: 1619817302}
   receiveAudio: {fileID: 1676004071}
 --- !u!1 &1511799723
