@@ -1,5 +1,5 @@
 {
-    "name": "OSSRS.Samples",
+    "name": "SRS.Samples",
     "rootNamespace": "",
     "references": [
         "Unity.WebRTC"

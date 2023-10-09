@@ -85,7 +85,7 @@ First, please setup you Unity Project. If you're stuck, please get help from [Di
 
 1. Download package [SRS.WebRTC.Samples.unitypackage](https://github.com/ossrs/srs-unity/releases/latest/download/SRS.WebRTC.Samples.unitypackage).
 1. Click `Asserts > Import Package > Custom Package`, select the file `SRS.WebRTC.Samples.unitypackage`, then click `Import`.
-1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples`, where you got all samples there.
+1. From `Project` panel, open `Asserts > io.ossrs > Samples`, where you got all samples there.
 
 **Step 5:** Start [SRS](https://ossrs.io/lts/en-us/docs/v5/doc/getting-started) WebRTC media server:
 
@@ -110,7 +110,7 @@ To publish your WebCamera and Microphone using WebRTC. If you're stuck, please g
 
 Please follow [Setting up project](#setting-up-project), then work with `Publisher` sample.
 
-1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples > Publisher`, then open the `Scene`.
+1. From `Project` panel, open `Asserts > io.ossrs > Samples > Publisher`, then open the `Scene`.
 1. Click `Edit > Play` to play Unity scene, which publish WebRTC stream to SRS.
 1. Open Main camera object in the editor and under the SRS publisher script, change the ip address and stream key to your e.g. `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream`
 1. Play the WebRTC stream by [H5](http://localhost:8080/players/rtc_player.html?autostart=true).
@@ -136,7 +136,7 @@ To publish your game camera and voice using WebRTC. If you're stuck, please get 
 
 Please follow [Setting up project](#setting-up-project), then work with `Streamer` sample.
 
-1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples > Streamer`, then open the `Scene`.
+1. From `Project` panel, open `Asserts > io.ossrs > Samples > Streamer`, then open the `Scene`.
 1. Click `Edit > Play` to play Unity scene, which publish WebRTC stream to SRS.
 1. Open Main camera object in the editor and under the SRS streamer script, change the ip address and stream key to your e.g. `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream`
 1. Play the WebRTC stream by [H5](http://localhost:8080/players/rtc_player.html?autostart=true).
@@ -169,7 +169,7 @@ To play stream using WebRTC. If you're stuck, please get help from [Discord](htt
 Please follow [Setting up project](#setting-up-project), then work with `Player` sample.
 
 1. Publish the WebRTC stream by [H5](http://localhost:8080/players/rtc_publisher.html?autostart=true).
-1. From `Project` panel, open `Asserts > ossrs.io > Video Streaming and WebRTC Samples > Player`, then open the `Scene`.
+1. From `Project` panel, open `Asserts > io.ossrs > Samples > Player`, then open the `Scene`.
 1. Open Main camera object in the editor and under the SRS player script, change the ip address and stream key to your e.g. `http://localhost:1985/rtc/v1/whip-play/?app=live&stream=livestream`
 1. Click `Edit > Play` to play Unity scene, which publish WebRTC stream to SRS.
 
