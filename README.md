@@ -30,18 +30,16 @@ It also allows multiple Unity Games to communicate by WebRTC. And there should b
 
 We have tested on:
 
-* Unity editor `2021.3.16f1c1 LTS`, other latest LTS versions should work well also.
+* Unity editor `2020.3.48f1 LTS`, other latest LTS versions should work well also.
 * WebRTC 2.4+, because CaptureStream API changed, see [#2](https://github.com/ossrs/srs-unity/issues/2) for detail.
 
 The supported versions:
 
-- [ ] [3.0.0-pre.6](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.6), Not supported, see [#963](https://github.com/Unity-Technologies/com.unity.webrtc/issues/963)
-- [x] [3.0.0-pre.5](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.5)
-- [x] [3.0.0-pre.4](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.4), See [#5](https://github.com/ossrs/srs-unity/issues/5) and [#882](https://github.com/Unity-Technologies/com.unity.webrtc/issues/882).
-- [x] [3.0.0-pre.3](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.3)
-- [x] [3.0.0-pre.2](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.2)
-- [x] [3.0.0-pre.1](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.1)
-- [x] [2.4.0-exp.11](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/2.4.0-exp.11)
+| WebRTC | Supported | Note |
+|---|---|---|
+| [3.0.0-pre.6](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.6) | Not supported | See [#963](https://github.com/Unity-Technologies/com.unity.webrtc/issues/963) |
+| [3.0.0-pre.5](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.5) | [v1.0.1](https://github.com/ossrs/srs-unity/releases/tag/v1.0.1) | Stable |
+| [2.4.0-exp.11](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/2.4.0-exp.11) to [3.0.0-pre.4](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.4) | [v1.0.1](https://github.com/ossrs/srs-unity/releases/tag/v1.0.1) | Known issue, see [#5](https://github.com/ossrs/srs-unity/issues/5) and [#882](https://github.com/Unity-Technologies/com.unity.webrtc/issues/882). |
 
 The latest version should work well also, please file an issue if not.
 

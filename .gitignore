@@ -62,4 +62,4 @@ crashlytics-build.properties
 # Ignore user settings.
 UserSettings/EditorUserSettings.asset
 .idea
-
+.DS_Store
