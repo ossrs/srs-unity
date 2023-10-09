@@ -27,7 +27,9 @@ public class SrsPlayer : MonoBehaviour
 
     private void Awake()
     {
+#if WEBRTC_3_0_0_PRE_5_OR_BEFORE
         WebRTC.Initialize();
+#endif
         Debug.Log("WebRTC: Initialize ok");
     }
 
@@ -37,7 +39,9 @@ public class SrsPlayer : MonoBehaviour
         pc?.Dispose();
         pc = null;
 
+#if WEBRTC_3_0_0_PRE_5_OR_BEFORE
         WebRTC.Dispose();
+#endif
         Debug.Log("WebRTC: Dispose ok");
     }
 

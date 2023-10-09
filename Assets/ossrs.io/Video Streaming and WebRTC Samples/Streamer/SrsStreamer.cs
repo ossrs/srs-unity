@@ -31,7 +31,9 @@ public class SrsStreamer : MonoBehaviour
 
     private void Awake()
     {
+#if WEBRTC_3_0_0_PRE_5_OR_BEFORE
         WebRTC.Initialize();
+#endif
         Debug.Log("WebRTC: Initialize ok");
     }
 
@@ -52,7 +54,9 @@ public class SrsStreamer : MonoBehaviour
         webCamTexture?.Stop();
         webCamTexture = null;
 
+#if WEBRTC_3_0_0_PRE_5_OR_BEFORE
         WebRTC.Dispose();
+#endif
         Debug.Log("WebRTC: Dispose ok");
     }
 
