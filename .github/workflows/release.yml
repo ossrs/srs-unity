@@ -31,12 +31,13 @@ jobs:
       # Generate metadata list for Unity package.
       - name: Generate metadata list
         run: |
+          cd src
           find Assets/ -name \*.meta >> metaList
           mkdir -p objs
       - uses: pCYSl5EDgo/create-unitypackage@master
         with:
           package-path: ${{ env.SRS_FILE }}
-          include-files: metaList
+          include-files: src/metaList
 
       # Create release.
       - name: Create release
