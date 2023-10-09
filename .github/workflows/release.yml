@@ -31,7 +31,8 @@ jobs:
       # Generate metadata list for Unity package.
       - name: Generate metadata list
         run: |
-          find src/Assets -name \*.meta >> metaList
+          mv src/* .
+          find Assets -name \*.meta >> metaList
           mkdir -p objs
       - uses: pCYSl5EDgo/create-unitypackage@master
         with:
