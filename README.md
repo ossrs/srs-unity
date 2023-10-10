@@ -37,7 +37,7 @@ The supported versions:
 
 | WebRTC | Supported | Note |
 |---|---|---|
-| [3.0.0-pre.6](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.6) | [v1.0.2](https://github.com/ossrs/srs-unity/releases/tag/v1.0.2) | Stable. Fix [#963](https://github.com/Unity-Technologies/com.unity.webrtc/issues/963) |
+| [3.0.0-pre.6](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.6) | [v1.0.2](https://github.com/ossrs/srs-unity/releases/tag/v1.0.2), [v1.0.3](https://github.com/ossrs/srs-unity/releases/tag/v1.0.3) | Stable. Fix [#963](https://github.com/Unity-Technologies/com.unity.webrtc/issues/963) |
 | [3.0.0-pre.5](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.5) | [v1.0.1](https://github.com/ossrs/srs-unity/releases/tag/v1.0.1) | Stable |
 | [2.4.0-exp.11](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/2.4.0-exp.11) to [3.0.0-pre.4](https://github.com/Unity-Technologies/com.unity.webrtc/releases/tag/3.0.0-pre.4) | [v1.0.1](https://github.com/ossrs/srs-unity/releases/tag/v1.0.1) | Known issue, see [#5](https://github.com/ossrs/srs-unity/issues/5) and [#882](https://github.com/Unity-Technologies/com.unity.webrtc/issues/882). |
 
