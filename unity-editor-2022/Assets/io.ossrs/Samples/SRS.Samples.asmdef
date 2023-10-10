@@ -1,0 +1,22 @@
+{
+    "name": "SRS.Samples",
+    "rootNamespace": "",
+    "references": [
+        "Unity.WebRTC"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.webrtc",
+            "expression": "[2.4.0-exp.11,3.0.0-pre.5]",
+            "define": "WEBRTC_3_0_0_PRE_5_OR_BEFORE"
+        }
+    ],
+    "noEngineReferences": false
+}
