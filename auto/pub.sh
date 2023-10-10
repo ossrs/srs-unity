@@ -44,6 +44,20 @@ BRANCH=$(git branch |grep '*' |awk '{print $2}') &&
 echo "publish version $VERSION as tag $TAG, BRANCH=${BRANCH}"
 if [[ $? -ne 0 ]]; then echo "Release failed"; exit 1; fi
 
+
+# Update code for Unity Editors.
+for dir in $(ls -d unity-editor-*); do
+  echo "Update code for $dir"
+  (
+    cd $dir/Assets &&
+    rm -rf io.ossrs io.ossrs.meta &&
+    cp -r ../../src/Assets/io.ossrs* . &&
+    git add .
+  )
+  if [[ $? -ne 0 ]]; then echo "Update code for Unity Editors failed"; exit 1; fi
+done
+
+# Make sure all changes are committed.
 git st |grep -q 'nothing to commit'
 if [[ $? -ne 0 ]]; then
   echo "Failed: Please commit before release";
